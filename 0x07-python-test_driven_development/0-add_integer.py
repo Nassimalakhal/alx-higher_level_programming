@@ -1,22 +1,27 @@
 #!/usr/bin/python3
-# 0-add_integer.py
-# HAJAR EL ABDELLAOUI
-'''Define one function add_integer'''
+""" define sum of two integers function"""
 
 
 def add_integer(a, b=98):
-    '''Definition of add_integer function
-
-    args: 2 integers or floats
-    if a and b are not integers or floats we raise TypeError
-    exception with the message: a must be an integer or
-    b must be an integer
-
-    Return: an integer that represent the addition of a and b
-    '''
-    if not isinstance(a, int) and not isinstance(a, float):
+    """
+    Adds two integers
+    """
+    if a is None:
         raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
+    if b is None:
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    try:
+        a = int(a)
+    except ValueError:
+        raise TypeError("a must be an integer")
+    try:
+        b = int(b)
+    except ValueError:
+        raise TypeError("b must be an integer")
+    if not isinstance(a, int):
+        raise TypeError("a must be an integer")
+    elif not isinstance(b, int):
+        raise TypeError("b must be an integer")
+    else:
+        return a + b
 
